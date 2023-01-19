@@ -10,7 +10,7 @@ exports.requireSignin = async (req, res, next) => {
         return res.status(401).json(err);
     }
 };
-exports.isAdmin = (req, res, next) => {
+exports.isAdmin =async (req, res, next) => {
     try {
         const user = User.findById(req.user._id);
         if (user.role !== 1) {

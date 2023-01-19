@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(helmet());
 
 // routes middleware
-readdirSync('./routes').map((r) => app.use(require(`./routes/${r}`)));
+readdirSync('./routes').map((r) => app.use("/api/v1",require(`./routes/${r}`)));
 
 // Server
 const port = process.env.PORT || 8000;

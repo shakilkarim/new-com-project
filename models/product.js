@@ -39,7 +39,7 @@ const productSchema = new mongoose.Schema({
         contentType:String,
     },
     shipping:{
-        type:boolean,
+        type:Boolean,
         required:false,
     },
 },
