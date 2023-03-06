@@ -22,7 +22,7 @@ exports.register = async (req, res) => {
         // 3. check if email is taken
         const existingUser = await User.findOne({ email });
         if (existingUser) {
-            return res.json({ error: 'email is already taken' });
+            return res.json({ error: 'email is taken' });
         }
         // 4.hash Password
         const hashpassword = await hashPassword(password);

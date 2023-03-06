@@ -92,6 +92,7 @@ exports.photo = async (req, res) => {
     //Check photo and font end response
     if (product.photo.data) {
       res.set("Content-Type", product.photo.contentType);
+      res.set("Cross-Origin-Resource-Policy", "cross-origin")
       return res.send(product.photo.data);
     }
   } catch (err) {

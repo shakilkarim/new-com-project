@@ -25,7 +25,7 @@ exports.create = async (req, res) => {
         try{
             //data receive 
             const {name} = req.body;
-            const {categoryId} = req.Params;
+            const {categoryId} = req.params;
 
             const updateCategory = await Category.findByIdAndUpdate(
                 categoryId,
@@ -45,11 +45,11 @@ exports.create = async (req, res) => {
 
   exports.remove = async (req,res) => {
         try{
-            const removed = await Category.findByIdAndDelete(req.Params.categoryId);
+            const removed = await Category.findByIdAndDelete(req.params.categoryId);
             res.json(removed);
         }catch(err){
             console.log(err);
-            res.status(400).json(err.message);
+            res.status(500).json(err.message);
         }
   };
 
